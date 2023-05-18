@@ -103,7 +103,6 @@ body {
   font-weight: 500;
   letter-spacing: 0.02em;
   color: var(--secondary-text-color);
-  margin-bottom: 8px;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -185,24 +184,25 @@ body {
 .team-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 64px 24px;
-  justify-content: center;
-  align-items: center;
+
+  gap: 72px 24px;
+  /* justify-content: space-between; */
 }
 
-team-members {
-  width: 266px;
+.team-members {
+  width: 264px;
 }
+
 @media only screen and (min-width: 768px) {
+  .team-list {
+    gap: 64px 24px;
+  }
   .team-members {
-    width: calc((556px - 24px * 1) / 2);
+    flex-basic: calc((100% - 24px * 1) / 2);
   }
 }
 
 @media only screen and (min-width: 1200px) {
-  .team-members {
-    width: 1128px;
-  }
   .team-list {
     flex-wrap: nowrap;
   }
@@ -465,22 +465,28 @@ team-members {
   padding-bottom: 120px;
 }
 
-our-team-container {
+.our-team-container {
   min-width: 320px;
-  max-width: 428px;
-  padding: 0 81px;
+  max-width: 427px;
   margin: 0 auto;
+}
+
+@media only screen and (min-width: 428px) {
+  .our-team-container {
+    max-width: 428px;
+    padding: 0 82px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
   .our-team-container {
     max-width: 768px;
-    padding: 0 106px;
+    padding: 0 108px;
   }
 }
 
 @media only screen and (min-width: 1200px) {
-  .container {
+  .our-team-container {
     max-width: 1158px;
     padding: 0 15px;
   }
@@ -607,12 +613,12 @@ our-team-container {
   box-sizing: content-box;
 } */
 
-benefits-item {
+.benefits-item {
   width: 396px;
 }
 @media only screen and (min-width: 768px) {
   .benefits-item {
-    width: calc((100% - 24px * 1) / 2);
+    width: 356px;
   }
 }
 
@@ -626,6 +632,28 @@ benefits-item {
   padding-top: 130px;
   padding-bottom: 120px;
 }
+
+.customer-container {
+  min-width: 320px;
+  max-width: 428px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .customer-container {
+    max-width: 768px;
+    padding: 0 100px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .customer-container {
+    max-width: 1158px;
+    padding: 0 15px;
+  }
+}
+
 .customers-title {
   font-weight: 700;
   font-size: 36px;
@@ -637,8 +665,26 @@ benefits-item {
 }
 .customer-list {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 72px 16px;
 }
+
+.customer-item {
+  width: 190px;
+}
+
+@media only screen and (min-width: 768px) {
+  .customer-item {
+    width: 168px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .customer-item {
+    width: 168px;
+  }
+}
+
 .customers-link {
   display: flex;
   width: 168px;
