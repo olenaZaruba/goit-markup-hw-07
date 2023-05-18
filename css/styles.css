@@ -71,18 +71,45 @@ body {
 }
 
 .section-subtitle {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  text-align: center;
   letter-spacing: 0.02em;
   margin-bottom: 8px;
 }
+
+@media only screen and (min-width: 1200px) {
+  .section-subtitle {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .section-subtitle {
+    font-size: 20px;
+    line-height: 1.2;
+
+    text-align: left;
+  }
+}
+
 .section-discription {
   font-size: 16px;
   line-height: 1.5;
+  font-weight: 500;
   letter-spacing: 0.02em;
   color: var(--secondary-text-color);
   margin-bottom: 8px;
+}
+
+@media only screen and (min-width: 1200px) {
+  .section-discription {
+    font-weight: 400;
+  }
 }
 
 .work-item-discription {
@@ -95,13 +122,32 @@ body {
 }
 
 .container {
-  width: 1158px;
-  padding: 0 15px;
+  min-width: 320px;
+  max-width: 428px;
+  padding: 0 16px;
   margin: 0 auto;
 }
 
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1158px;
+    padding: 0 15px;
+  }
+}
+
 .section {
-  padding-top: 120px;
+  padding-top: 96px;
+}
+@media only screen and (min-width: 1200px) {
+  .section {
+    padding-top: 120px;
+  }
 }
 
 /*==== flexbox==== */
@@ -132,8 +178,8 @@ body {
 
 .benefits-list {
   display: flex;
-  flex-direction: row;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 72px 24px;
 }
 
 .team-list {
@@ -163,6 +209,15 @@ body {
 
 .work-item {
   width: calc((100% - 24px * 2) / 3);
+}
+.work {
+  display: none;
+}
+
+@media only screen and (min-width: 1200px) {
+  .work {
+    display: block;
+  }
 }
 
 .visually-hidden {
@@ -476,7 +531,7 @@ body {
 }
 
 .benefits-icons {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   background: var(--accent-color-second);
@@ -484,8 +539,29 @@ body {
   height: 112px;
   margin-bottom: 8px;
 }
-.benefits {
+
+@media only screen and (min-width: 1200px) {
+  .benefits-icons {
+    display: flex;
+  }
+}
+/* .benefits {
   box-sizing: content-box;
+} */
+
+benefits-item {
+  width: 396px;
+}
+@media only screen and (min-width: 768px) {
+  .benefits-item {
+    width: calc((100% - 24px * 1) / 2);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .benefits-item {
+    width: 264px;
+  }
 }
 
 .customers {
