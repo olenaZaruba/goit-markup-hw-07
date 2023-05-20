@@ -161,6 +161,22 @@ body {
   display: flex;
   align-items: center;
   flex-direction: row;
+  min-width: 428px;
+  padding: 0 16px;
+}
+
+@media only screen and (min-width: 768px) {
+  .header-container {
+    max-width: 768px;
+    padding: 0 16px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .header-container {
+    max-width: 1158px;
+    padding: 0 15px;
+  }
 }
 
 .menu-list {
@@ -177,8 +193,19 @@ body {
   display: flex;
   flex-direction: row;
 }
+@media only screen and (max-width: 768px) {
+  .contact {
+    display: none;
+  }
+}
 .contact-item {
   margin-right: 40px;
+}
+
+@media only screen and (max-width: 768px) {
+  .menu-item {
+    display: none;
+  }
 }
 
 .benefits-list {
@@ -192,7 +219,7 @@ body {
   flex-wrap: wrap;
 
   gap: 72px 24px;
-  /* justify-content: space-between; */
+  justify-content: center;
 }
 
 .team-members {
@@ -300,8 +327,20 @@ body {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--accent-color);
-  margin-right: 76px;
+  margin-right: 0px;
 }
+@media only screen and (min-width: 786px) {
+  .logo {
+    margin-right: 120px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .logo {
+    margin-right: 76px;
+  }
+}
+
 .dark-logo {
   color: var(--primary-text-color);
 }
@@ -367,6 +406,13 @@ body {
 .contact-link:focus,
 .contact-link:hover {
   color: var(--style-color);
+}
+
+.burger {
+  display: inline-block;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
 }
 
 /*==================== Hero =========================*/
@@ -480,7 +526,7 @@ body {
 @media only screen and (min-width: 428px) {
   .our-team-container {
     max-width: 428px;
-    padding: 0 82px;
+    padding: 0 16px;
   }
 }
 
@@ -646,7 +692,7 @@ body {
 }
 
 .customers {
-  padding-top: 130px;
+  padding-top: 120px;
   padding-bottom: 120px;
 }
 
@@ -654,13 +700,19 @@ body {
   min-width: 320px;
   max-width: 428px;
   padding: 0 16px;
-  margin: 0 auto;
+}
+
+@media only screen and (min-width: 428px) {
+  .customer-container {
+    max-width: 428px;
+    padding: 0 16px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
   .customer-container {
     max-width: 768px;
-    padding: 0 100px;
+    padding: 0 108px;
   }
 }
 
@@ -684,6 +736,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 72px 16px;
+  justify-content: center;
 }
 
 .customer-item {
@@ -694,17 +747,14 @@ body {
   .customer-item {
     width: 168px;
   }
-}
-
-@media only screen and (min-width: 1200px) {
-  .customer-item {
-    width: 168px;
+  .customer-list {
+    gap: 72px 24px;
   }
 }
 
 .customers-link {
   display: flex;
-  width: 168px;
+  width: 190px;
   height: 88px;
   justify-content: center;
   align-items: center;
@@ -716,12 +766,17 @@ body {
   transition-property: color, border;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0;
 }
 .customers-link:hover,
 .customers-link:focus {
   color: var(--style-color);
   border: 1px solid var(--style-color);
+}
+
+@media only screen and (min-width: 768px) {
+  .customers-link {
+    width: 168px;
+  }
 }
 
 .customers-svg {
@@ -1058,3 +1113,169 @@ body {
   color: var(--accent-color);
   text-decoration: underline;
 }
+
+/* mobile menu */
+.menu-toggle {
+  padding: 24px 0px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: auto;
+
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.menu-toggle-close {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  background-color: var(--dark-color-theme);
+  border-radius: 50%;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+  background-color: var(--style-color);
+  fill: var(--contrast-text-color);
+}
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+
+  width: 100vw;
+  height: 100vh;
+  padding: 40px;
+  padding-top: 80px;
+  background-color: var(--contrast-text-color);
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+  z-index: 999;
+
+  transform: translateX(100%);
+  transition: transform 250ms ease-in-out;
+}
+
+.menu-container.is-open {
+  transform: translateX(0);
+}
+
+.menu-container .menu-toggle {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  color: #fff;
+}
+
+.mobile-menu {
+  margin-bottom: auto;
+  list-style: none;
+}
+
+.mobile-menu .link {
+  display: block;
+
+  text-decoration: none;
+}
+
+.mobile-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+
+  background-color: var(--accent-color);
+  border-radius: 50%;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-social-link:hover,
+.mobile-social-linbk:focus {
+  background-color: var(--icons-color2);
+}
+.mobile-social {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 64px;
+}
+.mobile-contact {
+  margin-bottom: 48px;
+}
+
+.mobile-menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 24px;
+  padding-top: 24px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+
+  color: var(--primary-text-color);
+  position: relative;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+/*
+.menu-link:focus,
+.menu-link:hover {
+  color: var(--style-color);
+}
+
+.menu-link.current::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--style-color);
+}  
+ */
