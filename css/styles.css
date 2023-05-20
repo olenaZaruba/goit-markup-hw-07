@@ -143,6 +143,12 @@ body {
 .section {
   padding-top: 96px;
 }
+@media only screen and (min-width: 768px) {
+  .section {
+    padding-top: 96px;
+  }
+}
+
 @media only screen and (min-width: 1200px) {
   .section {
     padding-top: 120px;
@@ -609,9 +615,20 @@ body {
     display: flex;
   }
 }
-/* .benefits {
-  box-sizing: content-box;
-} */
+.benefits {
+  padding-bottom: 96px;
+}
+
+@media only screen and (min-width: 768px) {
+  .benefits {
+    padding-bottom: 96px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .benefits {
+    padding-bottom: 0px;
+  }
+}
 
 .benefits-item {
   width: 396px;
