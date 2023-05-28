@@ -463,6 +463,8 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
 }
 @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
