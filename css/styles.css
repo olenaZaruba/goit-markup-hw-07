@@ -122,9 +122,13 @@ body {
 
 .container {
   min-width: 320px;
-  max-width: 428px;
   padding: 0 16px;
   margin: 0 auto;
+}
+@media only screen and (min-width: 428px) {
+  .container {
+    max-width: 396px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -161,8 +165,15 @@ body {
   display: flex;
   align-items: center;
   flex-direction: row;
-  min-width: 428px;
+  /* max-width: 427px; */
   padding: 0 16px;
+}
+
+@media only screen and (min-width: 428px) {
+  .header-container {
+    max-width: 396px;
+    padding: 0 16px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -323,9 +334,10 @@ body {
 .page-header {
   padding-top: 0;
   padding-bottom: 0;
-  display: flex;
+  display: block;
   align-items: center;
 }
+
 .page-nav {
   margin: 0;
 }
@@ -946,6 +958,12 @@ body {
   font-weight: 500;
   margin: 0 auto;
 }
+/* 
+@media only screen and (min-width: 428px) {
+  .booking-form-label {
+    max-width: 264px;
+  }
+} */
 @media only screen and (min-width: 768px) {
   .footer-title {
     margin-left: 0;
@@ -1054,10 +1072,10 @@ body {
 }
 
 .booking-form-mail {
-  width: 398px;
+  min-width: 264px;
   height: 40px;
   padding: 8px 16px;
-  margin-right: 24px;
+
   color: #ffffff;
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -1069,6 +1087,13 @@ body {
   line-height: 2;
   letter-spacing: 0.04em;
   color: rgba(255, 255, 255, 0.6);
+}
+
+@media only screen and (min-width: 428px) {
+  .booking-form-mail {
+    width: 394px;
+    padding: 8px 16px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
