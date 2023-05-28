@@ -462,8 +462,7 @@ body {
 
   background-repeat: no-repeat;
   background-position: center;
-  margin-left: auto;
-  margin-right: auto;
+  background-size: cover;
 }
 @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
@@ -521,7 +520,6 @@ body {
 @media only screen and (min-width: 768px) {
   .hero {
     padding: 112px 0px;
-    max-width: 768px;
   }
 }
 
