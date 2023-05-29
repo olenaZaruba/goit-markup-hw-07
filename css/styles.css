@@ -226,8 +226,11 @@ body {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .menu-item {
+    display: none;
+  }
+  .menu-list {
     display: none;
   }
 }
@@ -355,7 +358,7 @@ body {
   color: var(--accent-color);
   margin-right: 0px;
 }
-@media only screen and (min-width: 786px) {
+@media only screen and (min-width: 768px) {
   .logo {
     margin-right: 120px;
     justify-content: left;
@@ -395,6 +398,9 @@ body {
 .menu-link:hover {
   color: var(--style-color);
 }
+.current {
+  color: var(--style-color);
+}
 
 .menu-link.current::after {
   content: '';
@@ -408,10 +414,6 @@ body {
   background-color: var(--style-color);
 }
 
-.menu-list {
-  display: flex;
-  align-items: center;
-}
 .work-item-link {
   color: var(--primary-text-color);
   font-weight: 500;
@@ -543,7 +545,7 @@ body {
   margin-bottom: 72px;
 }
 
-@media only screen and (min-width: 786px) {
+@media only screen and (min-width: 768px) {
   .main-title {
     font-weight: 700;
     font-size: 56px;
@@ -1177,12 +1179,13 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 408px;
+  max-width: 408px;
+  width: 100%;
   min-height: 576px;
   padding-top: 85px;
   padding-left: 24px;
   padding-right: 24px;
-  padding-bottom: 10px;
+  padding-bottom: 24px;
 
   background: var(--modal-box);
   box-shadow: var(--modal-box-shadow);
@@ -1191,10 +1194,10 @@ body {
   transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1),
     opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-@media only screen and (min-width: 428px) {
+@media only screen and (min-width: 320px) {
   .modal {
-    max-width: 392px;
+    max-height: 576px;
+    overflow-y: scroll;
   }
 }
 
@@ -1454,6 +1457,12 @@ body {
   transition: transform 250ms ease-in-out;
 }
 
+@media only screen and (min-width: 320px) {
+  .menu-container {
+    overflow-y: scroll;
+  }
+}
+
 @media (min-width: 768px) {
   .menu-container {
     display: none;
@@ -1506,6 +1515,12 @@ body {
   align-items: center;
   gap: 64px;
 }
+@media (min-width: 320px) {
+  .mobile-social {
+    gap: 28px;
+  }
+}
+
 .mobile-contact {
   margin-bottom: 48px;
 }
@@ -1545,10 +1560,6 @@ body {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.contact-link:focus,
-.contact-link:hover {
-  color: var(--style-color);
-}
 .mobile-contact-mail {
   font-weight: 500;
   font-size: 30px;
@@ -1563,4 +1574,12 @@ body {
 
 .mobile-contact-item:first-child {
   padding-bottom: 40px;
+}
+@media (min-width: 320px) {
+  .mobile-contact-tel {
+    font-size: 24px;
+  }
+  .mobile-contact-mail {
+    font-size: 24px;
+  }
 }
